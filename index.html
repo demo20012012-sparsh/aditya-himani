@@ -105,32 +105,32 @@
       transform: translateX(105%) rotateY(-18deg);
     }
 
-    /* Floating petals animation */
+    /* Floating petals animation for 5 seconds pop burst */
     @keyframes petalFall {
       0% {
         transform: translateY(-10%) rotate(0deg) translateX(0);
         opacity: 0;
       }
-      10% {
-        opacity: 0.8;
+      15% {
+        opacity: 0.95;
       }
-      90% {
-        opacity: 0.8;
+      85% {
+        opacity: 0.95;
       }
       100% {
-        transform: translateY(110vh) rotate(360deg) translateX(60px);
+        transform: translateY(105vh) rotate(360deg) translateX(50px);
         opacity: 0;
       }
     }
     .floating-petal {
       position: absolute;
       pointer-events: none;
-      animation: petalFall linear infinite;
+      animation: petalFall linear forwards;
     }
     
     /* Ganpati aura glow */
     .ganpati-glow {
-      filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.65));
+      filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.7));
     }
   </style>
 </head>
@@ -211,43 +211,98 @@
       </div>
     </div>
 
-    <!-- CENTER EMBLEM: PURE GANPATI BAPA EMBLEM ONLY (NO OTHER TEXT OR MONOGRAM) -->
-    <div id="curtainCenterSeal" class="absolute z-30 flex flex-col items-center justify-center pointer-events-none transition-all duration-1000 transform">
+    <!-- CENTER EMBLEM: PURE DIVINE GANPATI BAPPA EMBLEM ONLY -->
+    <div id="curtainCenterSeal" class="absolute z-30 flex flex-col items-center justify-center pointer-events-none transition-opacity duration-1000">
       <!-- Ornate Outer Mandala Circle in Light Gold & Cream -->
       <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-2 bg-gradient-to-br from-gold-300 via-cream-50 to-gold-500 shadow-2xl flex items-center justify-center ganpati-glow border-4 border-gold-400">
-        <div class="w-full h-full rounded-full border-2 border-dashed border-gold-600 bg-cream-50/95 flex flex-col items-center justify-center p-3 shadow-inner relative overflow-hidden">
+        <div class="w-full h-full rounded-full border-2 border-dashed border-gold-600 bg-cream-50/95 flex flex-col items-center justify-center p-2 shadow-inner relative overflow-hidden">
           
-          <!-- Subtle Shimmer rays -->
-          <div class="absolute inset-0 bg-gradient-to-t from-gold-200/40 via-transparent to-gold-200/40 pointer-events-none"></div>
+          <!-- NEW DISTINCT MASTERPIECE GANPATI BAPPA EMBLEM DESIGN -->
+          <svg class="w-40 h-40 sm:w-48 sm:h-48 filter drop-shadow-md" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bappaGoldShine" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFDF7"/>
+                <stop offset="25%" stop-color="#F2DF9F"/>
+                <stop offset="55%" stop-color="#D4AF37"/>
+                <stop offset="85%" stop-color="#C29826"/>
+                <stop offset="100%" stop-color="#7A5B0F"/>
+              </linearGradient>
+              <linearGradient id="bappaDarkGold" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#8B6314"/>
+                <stop offset="50%" stop-color="#D4AF37"/>
+                <stop offset="100%" stop-color="#674706"/>
+              </linearGradient>
+              <radialGradient id="auraRadial" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FAF3DC" stop-opacity="0.8"/>
+                <stop offset="100%" stop-color="#FAF3DC" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
 
-          <!-- PURE GANPATI BAPA DIVINE ICON DESIGN ONLY -->
-          <svg class="w-36 h-36 sm:w-40 sm:h-40 filter drop-shadow-md" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Crown / Mukut with Golden Carvings -->
-            <path d="M40 15 L50 4 L60 15 L50 19 Z" fill="#D4AF37" stroke="#7A5B0F" stroke-width="1.2"/>
-            <path d="M45 15 L50 9 L55 15 Z" fill="#FAF3DC"/>
-            <circle cx="50" cy="10" r="1.8" fill="#8B2635"/>
-            <!-- Tilak (Trishul & Bindu) -->
-            <path d="M50 20 V33" stroke="#8B2635" stroke-width="2.6" stroke-linecap="round"/>
-            <path d="M45 24 Q50 31 55 24" stroke="#C29826" stroke-width="1.8" fill="none"/>
-            <circle cx="50" cy="35" r="1.8" fill="#8B2635"/>
-            <!-- Ears -->
-            <!-- Left Ear -->
-            <path d="M38 27 C24 25 18 39 31 50 C37 54 40 52 41 46" fill="none" stroke="#9E7717" stroke-width="3" stroke-linecap="round"/>
-            <path d="M34 32 C26 32 23 40 30 46" fill="none" stroke="#D4AF37" stroke-width="1.4"/>
-            <!-- Right Ear -->
-            <path d="M62 27 C76 25 82 39 69 50 C63 54 60 52 59 46" fill="none" stroke="#9E7717" stroke-width="3" stroke-linecap="round"/>
-            <path d="M66 32 C74 32 77 40 70 46" fill="none" stroke="#D4AF37" stroke-width="1.4"/>
-            <!-- Eyes / Divine Gaze -->
-            <circle cx="43" cy="30" r="1" fill="#7A5B0F"/>
-            <circle cx="57" cy="30" r="1" fill="#7A5B0F"/>
-            <!-- Head & Trunk (Sondh) with Graceful Curve -->
-            <path d="M50 33 C42 33 43 47 43 56 C43 65 51 74 61 74 C67 74 71 69 70 65 C69 61 64 61 63 64 C62 67 59 67 55 65 C50 63 48 56 48 51 C48 44 51 43 51 43" fill="none" stroke="#8A6112" stroke-width="3.6" stroke-linecap="round"/>
-            <!-- Modak / Laddu in Trunk / Palm -->
-            <circle cx="68" cy="62" r="3.2" fill="#D4AF37" stroke="#7A5B0F" stroke-width="1.1"/>
-            <circle cx="68" cy="62" r="1.5" fill="#FAF3DC"/>
-            <!-- Decorative Lotus Base Petals -->
-            <path d="M33 83 C42 77 58 77 67 83 C59 86 41 86 33 83 Z" fill="#D4AF37" stroke="#9E7717" stroke-width="1"/>
-            <circle cx="50" cy="84" r="2.2" fill="#8B2635"/>
+            <!-- Background Radiant Ring -->
+            <circle cx="80" cy="80" r="74" fill="url(#auraRadial)"/>
+            <circle cx="80" cy="80" r="72" stroke="#D4AF37" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.75"/>
+            <circle cx="80" cy="80" r="67" stroke="#9E7717" stroke-width="0.8" opacity="0.6"/>
+
+            <!-- Divine Royal Mukut (Artisan Tiered Pagdi & Kalash) -->
+            <path d="M80 14 L84 21 L88 25 L80 28 L72 25 L76 21 Z" fill="url(#bappaGoldShine)" stroke="#7A5B0F" stroke-width="1.1"/>
+            <circle cx="80" cy="11.5" r="2.5" fill="#8B2635"/>
+            <!-- Tier 1 Crown -->
+            <path d="M64 29 Q80 20 96 29 L93 39 Q80 32 67 39 Z" fill="url(#bappaGoldShine)" stroke="#7A5B0F" stroke-width="1.3"/>
+            <circle cx="80" cy="30" r="1.8" fill="#8B2635"/>
+            <circle cx="72" cy="33.5" r="1.3" fill="#D4AF37"/>
+            <circle cx="88" cy="33.5" r="1.3" fill="#D4AF37"/>
+            <!-- Tier 2 Crown Band -->
+            <path d="M60 41 Q80 34 100 41 L97 48 Q80 43 63 48 Z" fill="url(#bappaGoldShine)" stroke="#7A5B0F" stroke-width="1.3"/>
+            <circle cx="80" cy="42" r="1.6" fill="#8B2635"/>
+
+            <!-- Sacred Tilak & Trishul with Chandrabindu -->
+            <path d="M80 48 V63" stroke="#8B2635" stroke-width="2.8" stroke-linecap="round"/>
+            <path d="M72 53 Q80 62 88 53" stroke="url(#bappaDarkGold)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <circle cx="80" cy="66" r="2.2" fill="#8B2635"/>
+
+            <!-- Left Broad Ear with Ornate Inset & Royal Kundal -->
+            <path d="M62 48 C34 44 24 68 40 86 C50 93 60 88 62 77" fill="none" stroke="url(#bappaDarkGold)" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M54 56 C38 56 34 71 44 80" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.85"/>
+            <circle cx="38" cy="72" r="2.6" fill="#8B2635"/>
+            <circle cx="38" cy="72" r="1.2" fill="#FAF3DC"/>
+
+            <!-- Right Majestic Ear with Ornate Inset & Royal Kundal -->
+            <path d="M98 48 C126 44 136 68 120 86 C110 93 100 88 98 77" fill="none" stroke="url(#bappaDarkGold)" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M106 56 C122 56 126 71 116 80" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.85"/>
+            <circle cx="122" cy="72" r="2.6" fill="#8B2635"/>
+            <circle cx="122" cy="72" r="1.2" fill="#FAF3DC"/>
+
+            <!-- Peaceful Meditative Eyes -->
+            <path d="M66 56 Q71 52 76 57" stroke="#674706" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <path d="M84 57 Q89 52 94 56" stroke="#674706" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <circle cx="71" cy="57" r="1.4" fill="#674706"/>
+            <circle cx="89" cy="57" r="1.4" fill="#674706"/>
+
+            <!-- Sacred Tusks (Ekdanta) -->
+            <!-- Broken Tusk (Sacred Ekdanta on Left) -->
+            <path d="M66 77 L57 80" stroke="#FFFDF7" stroke-width="3.6" stroke-linecap="round"/>
+            <!-- Full Long Tusk on Right -->
+            <path d="M94 77 L105 82" stroke="#FFFDF7" stroke-width="3.6" stroke-linecap="round"/>
+
+            <!-- Graceful Vakratunda Sacred Trunk (Continuous Divine Flow to Right) -->
+            <path d="M80 65 C67 65 65 85 67 101 C68 116 82 128 98 126 C110 124 118 114 115 104 C112 95 102 96 101 103 C100 109 92 112 85 108 C76 103 74 91 76 82 C77 72 82 68 82 68" fill="none" stroke="url(#bappaDarkGold)" stroke-width="4.8" stroke-linecap="round"/>
+
+            <!-- Golden Ornate Rings across the Sacred Trunk -->
+            <path d="M71 90 Q76 92 81 90" stroke="#FFFDF7" stroke-width="1.8" fill="none"/>
+            <path d="M72 100 Q78 103 84 100" stroke="#FFFDF7" stroke-width="1.8" fill="none"/>
+            <path d="M77 110 Q84 114 91 111" stroke="#FFFDF7" stroke-width="1.8" fill="none"/>
+
+            <!-- Sacred Golden Modak at Trunk Tip -->
+            <g transform="translate(112, 99)">
+              <ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="url(#bappaGoldShine)" stroke="#7A5B0F" stroke-width="1.2"/>
+              <path d="M0 -7.5 L0 -3.5" stroke="#8B2635" stroke-width="1.4" stroke-linecap="round"/>
+              <circle cx="-1.8" cy="-0.5" r="1.4" fill="#FAF3DC"/>
+            </g>
+
+            <!-- Auspicious Lotus Pedestal (Padmasana) Base -->
+            <path d="M46 136 C64 126 96 126 114 136 C102 143 58 143 46 136 Z" fill="url(#bappaGoldShine)" stroke="#7A5B0F" stroke-width="1.4"/>
+            <path d="M60 133 Q80 125 100 133" stroke="#FAF3DC" stroke-width="1.4" fill="none"/>
+            <circle cx="80" cy="136" r="2.8" fill="#8B2635"/>
           </svg>
 
         </div>
@@ -273,7 +328,7 @@
         <span class="w-1 bg-gold-500 h-4 animate-pulse" style="animation-delay: 0.15s"></span>
         <span class="w-1 bg-gold-600 h-3 animate-pulse" style="animation-delay: 0.3s"></span>
       </div>
-      <span id="musicBtnLabel" class="text-xs uppercase tracking-widest font-semibold font-cinzel text-gold-700">Music Playing</span>
+      <span id="musicBtnLabel" class="text-xs uppercase tracking-widest font-semibold font-cinzel text-gold-700">Kesariya Playing</span>
     </button>
   </aside>
 
@@ -664,11 +719,12 @@
               class="w-full px-4 py-3 rounded-xl bg-cream-100/70 border border-gold-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-300/40 outline-none text-royal-dark font-medium transition text-sm resize-none"></textarea>
           </div>
 
-          <!-- Submit Buttons Area: Submit RSVP and Excel Access -->
-          <div class="pt-2 flex flex-col sm:flex-row gap-3">
+          <!-- Submit Buttons Area -->
+          <div class="pt-2">
             <button type="submit" id="submitRsvpBtn"
-              class="flex-1 py-4 rounded-xl bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 hover:from-gold-600 hover:to-gold-500 text-cream-50 font-cinzel font-bold text-sm tracking-widest uppercase shadow-lg hover:shadow-xl active:scale-[0.99] transition duration-200">
-              Submit RSVP
+              class="w-full py-4 rounded-xl bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 hover:from-gold-600 hover:to-gold-500 text-cream-50 font-cinzel font-bold text-sm tracking-widest uppercase shadow-lg hover:shadow-xl active:scale-[0.99] transition duration-200 flex items-center justify-center space-x-2">
+              <span>Send RSVP via WhatsApp</span>
+              <span>🕊️</span>
             </button>
           </div>
 
@@ -676,22 +732,6 @@
           <div id="rsvpStatus" class="hidden p-4 rounded-xl text-center text-sm font-medium"></div>
 
         </form>
-
-        <!-- RSVP IN EXCEL ACTION BAR (WITH RSVP BUTTON & DIRECT ACCESS) -->
-        <div class="mt-8 pt-6 border-t border-gold-200/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gold-700 font-medium">
-          <div class="flex items-center space-x-2">
-            <span class="text-gold-500 text-sm">❖</span>
-            <span class="font-cinzel font-semibold tracking-wider">Dr. Aditya &amp; Dr. Himani Wedding Ledger</span>
-          </div>
-          <div class="flex items-center space-x-2.5">
-            <button id="openAdminModalBtn" class="flex items-center space-x-2 hover:bg-gold-200/60 transition py-2 px-4 rounded-xl border border-gold-400 bg-cream-100 shadow-sm text-gold-800">
-              <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-              </svg>
-              <span class="font-cinzel font-bold tracking-wider uppercase text-[11px]">RSVP in Excel</span>
-            </button>
-          </div>
-        </div>
 
       </div>
     </section>
@@ -718,102 +758,68 @@
 
   </main>
 
-
-  <!-- ========================================================================= -->
-  <!-- 6. ADMIN RSVP & EXCEL DOWNLOAD MODAL (PASSWORD: 240127) -->
-  <!-- ========================================================================= -->
-  <div id="adminModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-cream-50 rounded-2xl border-2 border-gold-400 max-w-3xl w-full p-6 sm:p-8 luxury-box-shadow relative overflow-hidden max-h-[90vh] flex flex-col">
-      
-      <!-- Close button -->
-      <button id="closeAdminModalBtn" class="absolute top-4 right-4 text-gold-700 hover:text-royal-accent p-1 text-xl font-bold">
-        ✕
-      </button>
-
-      <!-- STEP 1: PASSWORD PROMPT (PASSWORD: 240127, NO HINT OR CLUE AS REQUESTED) -->
-      <div id="adminLoginView" class="py-6 text-center max-w-sm mx-auto w-full">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gold-200/80 border border-gold-400 flex items-center justify-center text-gold-700">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-cinzel font-bold text-gold-800 mb-2">RSVP Access</h3>
-        
-        <form id="adminLoginForm" class="space-y-4 mt-4">
-          <input type="password" id="adminPasswordInput" placeholder="Enter Password" required
-            class="w-full px-4 py-3 rounded-xl bg-cream-100 border border-gold-300 text-center font-mono tracking-widest text-base outline-none focus:border-gold-500">
-          <div id="adminLoginError" class="hidden text-xs text-red-600 font-semibold">Incorrect password. Please try again.</div>
-          <button type="submit" class="w-full py-3 bg-gold-500 hover:bg-gold-600 text-cream-50 font-cinzel font-bold uppercase tracking-wider text-xs rounded-xl shadow">
-            Verify Access
-          </button>
-        </form>
-      </div>
-
-      <!-- STEP 2: COMPLETE RSVP LEDGER & REAL EXCEL DOWNLOAD -->
-      <div id="adminDashboardView" class="hidden flex-col h-full overflow-hidden">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-gold-200 gap-3">
-          <div>
-            <h3 class="text-xl font-cinzel font-bold text-gold-700">All RSVP Responses</h3>
-            <p class="text-xs text-royal-dark/70 font-sans">
-              File: <strong class="text-gold-700">Dr_Aditya_Dr_Himani_Wedding_RSVP.xlsx</strong>
-            </p>
-          </div>
-          <button id="downloadExcelBtn" class="flex items-center justify-center space-x-2 px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-sans text-xs font-semibold shadow tracking-wide transition">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-            </svg>
-            <span>Download Excel Sheet</span>
-          </button>
-        </div>
-
-        <!-- Responses Table -->
-        <div class="overflow-x-auto my-4 flex-1 border border-gold-200 rounded-xl">
-          <table class="w-full text-left text-xs font-sans">
-            <thead class="bg-gold-200/60 font-cinzel text-gold-800 sticky top-0">
-              <tr>
-                <th class="p-3">S.No</th>
-                <th class="p-3">Full Name</th>
-                <th class="p-3">Mobile</th>
-                <th class="p-3">Status</th>
-                <th class="p-3">Message</th>
-                <th class="p-3">Date</th>
-                <th class="p-3">Time</th>
-              </tr>
-            </thead>
-            <tbody id="rsvpTableBody" class="divide-y divide-gold-100 bg-cream-50 text-royal-dark">
-              <!-- Dynamically populated -->
-            </tbody>
-          </table>
-        </div>
-
-        <div class="text-right pt-2 border-t border-gold-200">
-          <span id="totalRsvpCount" class="text-xs font-semibold text-gold-700">Total Entries: 0</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
   <!-- ========================================================================= -->
   <!-- JAVASCRIPT LOGIC -->
   <!-- ========================================================================= -->
   <script>
     /* -------------------------------------------------------------------------
-       1. WEDDING AUDIO SYNTHESIZER (LOUDER, RICH CELEBRATORY INDIAN WEDDING TUNE)
-       Creates celebratory Shehnai reed harmonics, resonant wedding bells & tanpura
-       drone using Web Audio API for guaranteed cross-device playback.
+       1. KESARIYA ROMANTIC INSTRUMENTAL WEDDING AUDIO ENGINE
+       Synthesizes the unmistakable romantic instrumental melody of "Kesariya"
+       with resonant Bansuri flute & Shehnai reed acoustic modeling and warm Tanpura
+       at louder, festive wedding presence.
        ------------------------------------------------------------------------- */
-    class WeddingAudioEngine {
+    class KesariyaAudioEngine {
       constructor() {
         this.ctx = null;
         this.isPlaying = false;
         this.timer = null;
         this.noteIndex = 0;
-        // Festive celebratory morning wedding notes (Shehnai Raga)
-        this.melodyNotes = [
-          392.00, 440.00, 493.88, 523.25, 587.33, 659.25, 783.99, // G4, A4, B4, C5, D5, E5, G5
-          659.25, 587.33, 523.25, 493.88, 587.33, 523.25, 392.00
+
+        // Frequencies for Kesariya (in Key of C/D)
+        const C4 = 261.63, D4 = 293.66, E4 = 329.63, F4 = 349.23, G4 = 392.00, A4 = 440.00, B4 = 493.88;
+        const C5 = 523.25, D5 = 587.33, E5 = 659.25, F5 = 698.46, G5 = 783.99;
+
+        // Signature "Kesariya Tera Ishq Hai Piya" melodic sequence & duration
+        this.score = [
+          // "Ke-sa-ri-ya te-ra"
+          { freq: G4, dur: 0.45 },
+          { freq: C5, dur: 0.45 },
+          { freq: B4, dur: 0.45 },
+          { freq: C5, dur: 0.65 },
+          { freq: A4, dur: 0.60 },
+
+          // "Ishq hai pi-ya"
+          { freq: G4, dur: 0.45 },
+          { freq: F4, dur: 0.45 },
+          { freq: G4, dur: 0.90 },
+
+          // "Rang jaaun jo main haath lagaun"
+          { freq: G4, dur: 0.35 },
+          { freq: A4, dur: 0.35 },
+          { freq: C5, dur: 0.50 },
+          { freq: B4, dur: 0.45 },
+          { freq: A4, dur: 0.45 },
+          { freq: G4, dur: 0.55 },
+          { freq: E4, dur: 0.65 },
+
+          // "Din beete saara teri fikr mein"
+          { freq: G4, dur: 0.40 },
+          { freq: C5, dur: 0.45 },
+          { freq: B4, dur: 0.45 },
+          { freq: C5, dur: 0.60 },
+          { freq: A4, dur: 0.55 },
+          { freq: G4, dur: 0.45 },
+          { freq: F4, dur: 0.45 },
+          { freq: G4, dur: 0.90 },
+
+          // "Rain saari teri khair maangu"
+          { freq: G4, dur: 0.35 },
+          { freq: A4, dur: 0.35 },
+          { freq: C5, dur: 0.50 },
+          { freq: B4, dur: 0.45 },
+          { freq: A4, dur: 0.45 },
+          { freq: G4, dur: 0.60 },
+          { freq: C5, dur: 1.10 }
         ];
       }
 
@@ -832,96 +838,98 @@
         if (this.isPlaying) return;
         this.isPlaying = true;
 
-        // Continuous Tanpura drone chord (louder, warm presence)
-        this.startTanpuraDrone();
+        // Warm, resonant Indian wedding tanpura drone (boosted festive volume)
+        this.startWeddingDrone();
 
-        // Start shehnai melody phrases
-        this.playMelodyLoop();
+        // Loop the romantic Kesariya song melody
+        this.playKesariyaLoop();
       }
 
-      startTanpuraDrone() {
+      startWeddingDrone() {
         if (!this.ctx) return;
-        const fundamental = 196.00; // G3
-        [1, 1.5, 2].forEach((ratio, idx) => {
+        const fundamental = 261.63; // C4
+        [1, 1.498, 2].forEach((ratio, idx) => {
           const osc = this.ctx.createOscillator();
           const gain = this.ctx.createGain();
           osc.type = idx === 1 ? 'sawtooth' : 'triangle';
           osc.frequency.setValueAtTime(fundamental * ratio, this.ctx.currentTime);
           
-          gain.gain.setValueAtTime(0.06, this.ctx.currentTime); // boosted gain for louder richness
+          // Enhanced wedding gain for louder fullness
+          gain.gain.setValueAtTime(0.08, this.ctx.currentTime);
           osc.connect(gain);
           gain.connect(this.ctx.destination);
           osc.start();
-          this.droneOsc = osc;
         });
       }
 
-      playMelodyLoop() {
+      playKesariyaLoop() {
         if (!this.isPlaying) return;
 
-        const freq = this.melodyNotes[this.noteIndex % this.melodyNotes.length];
+        const note = this.score[this.noteIndex % this.score.length];
         this.noteIndex++;
 
-        // Shehnai dual-reed harmonic oscillator
+        const now = this.ctx.currentTime;
+        const freq = note.freq;
+        const duration = note.dur;
+
+        // Dual acoustic flutes with gentle shehnai undertone for authentic Indian romance
         const osc1 = this.ctx.createOscillator();
         const osc2 = this.ctx.createOscillator();
-        const shehnaiGain = this.ctx.createGain();
+        const fluteGain = this.ctx.createGain();
         const filter = this.ctx.createBiquadFilter();
 
-        osc1.type = 'sawtooth';
-        osc2.type = 'square';
+        osc1.type = 'sine';
+        osc2.type = 'triangle';
 
-        osc1.frequency.setValueAtTime(freq, this.ctx.currentTime);
-        osc2.frequency.setValueAtTime(freq * 1.004, this.ctx.currentTime);
+        osc1.frequency.setValueAtTime(freq, now);
+        // Slight microtonal warmth
+        osc2.frequency.setValueAtTime(freq * 1.0025, now);
 
-        // Bandpass filter for shehnai reed acoustics
-        filter.type = 'bandpass';
-        filter.frequency.setValueAtTime(1400, this.ctx.currentTime);
-        filter.Q.setValueAtTime(3.5, this.ctx.currentTime);
+        // Warm acoustic filter
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(2200, now);
+        filter.Q.setValueAtTime(2.0, now);
 
-        const now = this.ctx.currentTime;
-        const duration = 0.58;
-
-        // Louder wedding volume envelope (0.24 peak amplitude)
-        shehnaiGain.gain.setValueAtTime(0.001, now);
-        shehnaiGain.gain.exponentialRampToValueAtTime(0.24, now + 0.08);
-        shehnaiGain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+        // Louder wedding volume envelope (0.28 peak amplitude)
+        fluteGain.gain.setValueAtTime(0.001, now);
+        fluteGain.gain.exponentialRampToValueAtTime(0.28, now + 0.07);
+        fluteGain.gain.exponentialRampToValueAtTime(0.001, now + duration);
 
         osc1.connect(filter);
         osc2.connect(filter);
-        filter.connect(shehnaiGain);
-        shehnaiGain.connect(this.ctx.destination);
+        filter.connect(fluteGain);
+        fluteGain.connect(this.ctx.destination);
 
         osc1.start(now);
         osc2.start(now);
         osc1.stop(now + duration);
         osc2.stop(now + duration);
 
-        // Auspicious Temple Bell chime periodically
-        if (this.noteIndex % 6 === 0) {
-          this.playTempleBell(880);
+        // Auspicious ghungroo / chime accompaniment on primary notes
+        if (this.noteIndex % 4 === 0) {
+          this.playGhungrooChime(freq * 2);
         }
 
         this.timer = setTimeout(() => {
-          this.playMelodyLoop();
-        }, duration * 850);
+          this.playKesariyaLoop();
+        }, duration * 920);
       }
 
-      playTempleBell(freq) {
+      playGhungrooChime(freq) {
         if (!this.ctx) return;
-        const bell = this.ctx.createOscillator();
-        const bellGain = this.ctx.createGain();
-        bell.type = 'sine';
-        bell.frequency.setValueAtTime(freq, this.ctx.currentTime);
+        const chime = this.ctx.createOscillator();
+        const chimeGain = this.ctx.createGain();
+        chime.type = 'sine';
+        chime.frequency.setValueAtTime(freq, this.ctx.currentTime);
 
         const now = this.ctx.currentTime;
-        bellGain.gain.setValueAtTime(0.12, now);
-        bellGain.gain.exponentialRampToValueAtTime(0.0001, now + 1.8);
+        chimeGain.gain.setValueAtTime(0.08, now);
+        chimeGain.gain.exponentialRampToValueAtTime(0.0001, now + 1.2);
 
-        bell.connect(bellGain);
-        bellGain.connect(this.ctx.destination);
-        bell.start(now);
-        bell.stop(now + 1.8);
+        chime.connect(chimeGain);
+        chimeGain.connect(this.ctx.destination);
+        chime.start(now);
+        chime.stop(now + 1.2);
       }
 
       stop() {
@@ -943,11 +951,10 @@
       }
     }
 
-    const weddingAudio = new WeddingAudioEngine();
+    const weddingAudio = new KesariyaAudioEngine();
 
     /* -------------------------------------------------------------------------
-       2. CURTAIN ENTRANCE LOGIC
-       Opens smoothly on tapping anywhere on the curtain screen.
+       2. CURTAIN ENTRANCE LOGIC & 5-SECOND BURST ANIMATION
        ------------------------------------------------------------------------- */
     const curtainIntro = document.getElementById('curtainIntro');
     const curtainLeft = document.getElementById('curtainLeft');
@@ -964,7 +971,7 @@
       if (curtainsOpened) return;
       curtainsOpened = true;
 
-      // 1. Play loud festive wedding music
+      // 1. Play loud Kesariya instrumental wedding music
       weddingAudio.start();
       updateMusicUI(true);
 
@@ -979,11 +986,10 @@
       // 4. Reveal hero page smoothly
       mainContent.style.opacity = '1';
 
-      // 5. Shower golden sparks & floral petals
-      triggerEntranceConfetti();
-      startContinuousPetals();
+      // 5. Trigger celebration pop animations FOR EXACTLY 5 SECONDS THEN STOP COMPLETELY
+      triggerFiveSecondCelebration();
 
-      // 6. Remove curtain container from DOM flow after animation finishes
+      // 6. Remove curtain container from DOM flow after opening finishes
       setTimeout(() => {
         curtainIntro.style.display = 'none';
       }, 2600);
@@ -993,11 +999,49 @@
     curtainIntro.addEventListener('touchstart', openCurtains, { passive: true });
 
     /* -------------------------------------------------------------------------
-       3. MUSIC BUTTON TOGGLE
+       3. 5-SECOND CELEBRATION POP BURST (NO ANIMATION AFTER 5 SECONDS)
+       ------------------------------------------------------------------------- */
+    function triggerFiveSecondCelebration() {
+      // Confetti burst on curtain open
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 110,
+          spread: 100,
+          origin: { y: 0.4 },
+          colors: ['#D4AF37', '#FAF3DC', '#8B2635', '#F2DF9F']
+        });
+      }
+
+      const container = document.getElementById('petalsOverlay');
+      const petalChars = ['🌸', '✨', '🌼', '🏵️'];
+
+      // Pop petals actively for 5 seconds only
+      const burstInterval = setInterval(() => {
+        const petal = document.createElement('div');
+        petal.className = 'floating-petal';
+        petal.textContent = petalChars[Math.floor(Math.random() * petalChars.length)];
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.fontSize = (Math.random() * 14 + 14) + 'px';
+        petal.style.animationDuration = '3.5s';
+        container.appendChild(petal);
+
+        setTimeout(() => {
+          petal.remove();
+        }, 3600);
+      }, 200);
+
+      // Hard stop after exactly 5 seconds: no further animations require
+      setTimeout(() => {
+        clearInterval(burstInterval);
+      }, 5000);
+    }
+
+    /* -------------------------------------------------------------------------
+       4. MUSIC BUTTON TOGGLE
        ------------------------------------------------------------------------- */
     function updateMusicUI(isPlaying) {
       if (isPlaying) {
-        musicBtnLabel.textContent = "Music Playing";
+        musicBtnLabel.textContent = "Kesariya Playing";
         musicWave.style.opacity = "1";
       } else {
         musicBtnLabel.textContent = "Music Muted";
@@ -1012,98 +1056,20 @@
     });
 
     /* -------------------------------------------------------------------------
-       4. LUXURY PETALS & CONFETTI EFFECTS
-       ------------------------------------------------------------------------- */
-    function triggerEntranceConfetti() {
-      if (typeof confetti === 'function') {
-        confetti({
-          particleCount: 80,
-          spread: 90,
-          origin: { y: 0.4 },
-          colors: ['#D4AF37', '#FAF3DC', '#8B2635', '#F2DF9F']
-        });
-      }
-    }
-
-    function startContinuousPetals() {
-      const container = document.getElementById('petalsOverlay');
-      const petalChars = ['🌸', '✨', '🌼', '🏵️'];
-
-      setInterval(() => {
-        if (document.hidden) return;
-        const petal = document.createElement('div');
-        petal.className = 'floating-petal';
-        petal.textContent = petalChars[Math.floor(Math.random() * petalChars.length)];
-        petal.style.left = Math.random() * 100 + 'vw';
-        petal.style.fontSize = (Math.random() * 14 + 14) + 'px';
-        petal.style.animationDuration = (Math.random() * 5 + 8) + 's';
-        container.appendChild(petal);
-
-        setTimeout(() => {
-          petal.remove();
-        }, 13000);
-      }, 900);
-    }
-
-    /* -------------------------------------------------------------------------
-       5. RSVP PERSISTENCE & DATA MANAGEMENT
-       Storage with robust fallback so all entries persist across page reloads.
-       ------------------------------------------------------------------------- */
-    // Default initial seed records for testing and demonstration
-    const initialRecords = [
-      {
-        serialNo: 1,
-        fullName: "Harishbhai Mehta",
-        mobileNumber: "+91 98250 11223",
-        attendance: "Joyfully Accept",
-        message: "Wishing dearest Aditya and Himani a lifetime of blissful togetherness!",
-        date: "2026-10-28",
-        time: "14:30"
-      },
-      {
-        serialNo: 2,
-        fullName: "Dr. K. R. Wankawala",
-        mobileNumber: "+91 94268 77890",
-        attendance: "Joyfully Accept",
-        message: "Very proud of you both. Congratulations!",
-        date: "2026-10-28",
-        time: "15:45"
-      }
-    ];
-
-    function getRsvpData() {
-      try {
-        const stored = window.__rsvpLedger;
-        if (stored && Array.isArray(stored)) {
-          return stored;
-        }
-      } catch (e) {}
-      window.__rsvpLedger = [...initialRecords];
-      return window.__rsvpLedger;
-    }
-
-    function saveRsvpData(record) {
-      const data = getRsvpData();
-      record.serialNo = data.length + 1;
-      data.push(record);
-      window.__rsvpLedger = data;
-      return true;
-    }
-
-    /* -------------------------------------------------------------------------
-       6. RSVP FORM SUBMISSION (NO EMAIL, NO GUEST COUNT)
+       5. LIVE RSVP SUBMISSION DIRECT TO WHATSAPP (+91 94083 32781)
        ------------------------------------------------------------------------- */
     const rsvpForm = document.getElementById('rsvpForm');
     const rsvpStatus = document.getElementById('rsvpStatus');
     const submitRsvpBtn = document.getElementById('submitRsvpBtn');
+    const TARGET_PHONE = '919408332781'; // Destination number +91 94083 32781
 
     rsvpForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
       const fullName = document.getElementById('fullName').value.trim();
-      const mobileNumber = document.getElementById('mobileNumber').value.trim() || 'N/A';
+      const mobileNumber = document.getElementById('mobileNumber').value.trim() || 'Not Provided';
       const attendanceEl = document.querySelector('input[name="attendance"]:checked');
-      const message = document.getElementById('message').value.trim() || 'Best wishes to the couple';
+      const message = document.getElementById('message').value.trim() || 'Congratulations and best wishes!';
 
       if (!fullName) {
         showStatus('Please enter your full name.', 'bg-red-100 text-red-800 border border-red-300');
@@ -1116,37 +1082,41 @@
       }
 
       submitRsvpBtn.disabled = true;
-      submitRsvpBtn.innerText = "RECORDING BLESSINGS...";
+      submitRsvpBtn.innerText = "SENDING LIVE RSVP...";
 
-      const now = new Date();
-      const dateStr = now.toISOString().split('T')[0];
-      const timeStr = now.toTimeString().split(' ')[0].substring(0, 5);
+      // Format elegant WhatsApp message payload
+      const statusEmoji = attendanceEl.value === 'Joyfully Accept' ? '✅' : '🌸';
+      const textMessage = 
+`*WEDDING RSVP — Dr. Aditya & Dr. Himani* 💍
+─────────────────────
+👤 *Guest Name:* ${fullName}
+📞 *Mobile:* ${mobileNumber}
+${statusEmoji} *Attendance:* ${attendanceEl.value}
+💌 *Message:* ${message}
+─────────────────────
+📅 *Wedding Date:* 24th January 2027`;
 
-      const newRecord = {
-        fullName: fullName,
-        mobileNumber: mobileNumber,
-        attendance: attendanceEl.value,
-        message: message,
-        date: dateStr,
-        time: timeStr
-      };
+      const encodedMsg = encodeURIComponent(textMessage);
+      const waUrl = `https://wa.me/${TARGET_PHONE}?text=${encodedMsg}`;
 
+      showStatus('✨ Thank you! Redirecting to WhatsApp to send your live RSVP...', 'bg-gold-100 text-gold-800 border border-gold-400');
+
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 60,
+          spread: 70,
+          origin: { y: 0.7 },
+          colors: ['#D4AF37', '#E84855', '#FAF3DC']
+        });
+      }
+
+      // Open WhatsApp directly with pre-filled message
       setTimeout(() => {
-        saveRsvpData(newRecord);
-        showStatus('✨ Thank you! Your RSVP has been graciously recorded.', 'bg-gold-100 text-gold-800 border border-gold-400');
-        rsvpForm.reset();
+        window.open(waUrl, '_blank');
         submitRsvpBtn.disabled = false;
-        submitRsvpBtn.innerText = "SUBMIT RSVP";
-
-        if (typeof confetti === 'function') {
-          confetti({
-            particleCount: 50,
-            spread: 60,
-            origin: { y: 0.7 },
-            colors: ['#D4AF37', '#E84855', '#FAF3DC']
-          });
-        }
-      }, 600);
+        submitRsvpBtn.innerHTML = '<span>Send RSVP via WhatsApp</span> <span>🕊️</span>';
+        rsvpForm.reset();
+      }, 700);
     });
 
     function showStatus(text, classes) {
@@ -1154,130 +1124,6 @@
       rsvpStatus.textContent = text;
       rsvpStatus.classList.remove('hidden');
     }
-
-    /* -------------------------------------------------------------------------
-       7. ADMIN PASSWORD & EXCEL EXPORT (EXACT PASSWORD: 240127)
-       NO HINT OR CLUE DISPLAYED AS REQUESTED
-       ------------------------------------------------------------------------- */
-    const openAdminModalBtn = document.getElementById('openAdminModalBtn');
-    const closeAdminModalBtn = document.getElementById('closeAdminModalBtn');
-    const adminModal = document.getElementById('adminModal');
-    const adminLoginForm = document.getElementById('adminLoginForm');
-    const adminPasswordInput = document.getElementById('adminPasswordInput');
-    const adminLoginError = document.getElementById('adminLoginError');
-    const adminLoginView = document.getElementById('adminLoginView');
-    const adminDashboardView = document.getElementById('adminDashboardView');
-    const rsvpTableBody = document.getElementById('rsvpTableBody');
-    const totalRsvpCount = document.getElementById('totalRsvpCount');
-    const downloadExcelBtn = document.getElementById('downloadExcelBtn');
-
-    openAdminModalBtn.addEventListener('click', () => {
-      adminModal.classList.remove('hidden');
-      adminModal.classList.add('flex');
-      adminPasswordInput.value = '';
-      adminLoginError.classList.add('hidden');
-      adminPasswordInput.focus();
-    });
-
-    closeAdminModalBtn.addEventListener('click', () => {
-      adminModal.classList.add('hidden');
-      adminModal.classList.remove('flex');
-    });
-
-    adminModal.addEventListener('click', (e) => {
-      if (e.target === adminModal) {
-        adminModal.classList.add('hidden');
-        adminModal.classList.remove('flex');
-      }
-    });
-
-    // Password verification logic (240127)
-    adminLoginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const enteredPass = adminPasswordInput.value.trim();
-
-      if (enteredPass === '240127') {
-        adminLoginError.classList.add('hidden');
-        adminLoginView.classList.add('hidden');
-        adminDashboardView.classList.remove('hidden');
-        adminDashboardView.classList.add('flex');
-        renderAdminTable();
-      } else {
-        adminLoginError.classList.remove('hidden');
-      }
-    });
-
-    function renderAdminTable() {
-      const records = getRsvpData();
-      rsvpTableBody.innerHTML = '';
-      totalRsvpCount.textContent = `Total Entries: ${records.length}`;
-
-      records.forEach((item, index) => {
-        const row = document.createElement('tr');
-        row.className = index % 2 === 0 ? 'bg-cream-50' : 'bg-gold-50/50';
-        row.innerHTML = `
-          <td class="p-3 font-semibold">${item.serialNo || index + 1}</td>
-          <td class="p-3 font-bold text-gold-900">${escapeHtml(item.fullName)}</td>
-          <td class="p-3">${escapeHtml(item.mobileNumber)}</td>
-          <td class="p-3">
-            <span class="px-2 py-0.5 rounded text-[11px] font-semibold ${item.attendance === 'Joyfully Accept' ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
-              ${escapeHtml(item.attendance)}
-            </span>
-          </td>
-          <td class="p-3 max-w-xs truncate" title="${escapeHtml(item.message)}">${escapeHtml(item.message)}</td>
-          <td class="p-3">${escapeHtml(item.date)}</td>
-          <td class="p-3">${escapeHtml(item.time)}</td>
-        `;
-        rsvpTableBody.appendChild(row);
-      });
-    }
-
-    function escapeHtml(text) {
-      if (!text) return '';
-      return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    }
-
-    /* -------------------------------------------------------------------------
-       8. EXCEL (.XLSX) GENERATION USING SHEETJS
-       File Name: Dr_Aditya_Dr_Himani_Wedding_RSVP.xlsx
-       Exact Headers Required:
-       Serial No. | Full Name | Mobile Number | Attendance Status | Message | Submission Date | Submission Time
-       ------------------------------------------------------------------------- */
-    downloadExcelBtn.addEventListener('click', () => {
-      const records = getRsvpData();
-
-      // Format data exactly for Excel
-      const excelRows = records.map((rec, idx) => ({
-        "Serial No.": rec.serialNo || idx + 1,
-        "Full Name": rec.fullName,
-        "Mobile Number": rec.mobileNumber,
-        "Attendance Status": rec.attendance,
-        "Message": rec.message,
-        "Submission Date": rec.date,
-        "Submission Time": rec.time
-      }));
-
-      // Create Worksheet using SheetJS
-      const worksheet = XLSX.utils.json_to_sheet(excelRows);
-
-      // Auto-fit column widths
-      worksheet['!cols'] = [
-        { wch: 10 }, // Serial No.
-        { wch: 25 }, // Full Name
-        { wch: 18 }, // Mobile Number
-        { wch: 20 }, // Attendance Status
-        { wch: 40 }, // Message
-        { wch: 16 }, // Submission Date
-        { wch: 16 }  // Submission Time
-      ];
-
-      // Create Workbook
-      const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, "RSVP Responses");
-
-      // Trigger instant .xlsx file download
-      XLSX.writeFile(workbook, "Dr_Aditya_Dr_Himani_Wedding_RSVP.xlsx");
-    });
   </script>
 </body>
 </html>
