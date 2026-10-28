@@ -10,50 +10,55 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS CDN (Loaded first) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- SheetJS for real .xlsx Excel generation & export -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   
   <!-- Canvas Confetti for celebration effects -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            cream: {
-              50: '#FDFBF7',
-              100: '#FBF7EE',
-              200: '#F6EED9',
-              300: '#EDE0C1',
-              400: '#DFCCA0',
-            },
-            gold: {
-              100: '#FAF3DC',
-              200: '#F2DF9F',
-              300: '#E4C664',
-              400: '#D4AF37',
-              500: '#C29826',
-              600: '#9E7717',
-              700: '#7A5B0F',
-            },
-            royal: {
-              accent: '#8B2635',
-              dark: '#2A1F13',
+    // Configure Tailwind safely with fallback check
+    const configureTailwind = () => {
+      if (typeof tailwind !== 'undefined') {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                cream: {
+                  50: '#FDFBF7',
+                  100: '#FBF7EE',
+                  200: '#F6EED9',
+                  300: '#EDE0C1',
+                  400: '#DFCCA0',
+                },
+                gold: {
+                  100: '#FAF3DC',
+                  200: '#F2DF9F',
+                  300: '#E4C664',
+                  400: '#D4AF37',
+                  500: '#C29826',
+                  600: '#9E7717',
+                  700: '#7A5B0F',
+                },
+                royal: {
+                  accent: '#8B2635',
+                  dark: '#2A1F13',
+                }
+              },
+              fontFamily: {
+                cinzel: ['"Cinzel Decorative"', 'serif'],
+                cormorant: ['"Cormorant Garamond"', 'serif'],
+                script: ['"Great Vibes"', 'cursive'],
+                sans: ['"Montserrat"', 'sans-serif'],
+              }
             }
-          },
-          fontFamily: {
-            cinzel: ['"Cinzel Decorative"', 'serif'],
-            cormorant: ['"Cormorant Garamond"', 'serif'],
-            script: ['"Great Vibes"', 'cursive'],
-            sans: ['"Montserrat"', 'sans-serif'],
           }
-        }
+        };
+      } else {
+        setTimeout(configureTailwind, 20);
       }
-    }
+    };
+    configureTailwind();
   </script>
 
   <style>
@@ -217,92 +222,66 @@
       <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-2 bg-gradient-to-br from-gold-300 via-cream-50 to-gold-500 shadow-2xl flex items-center justify-center ganpati-glow border-4 border-gold-400">
         <div class="w-full h-full rounded-full border-2 border-dashed border-gold-600 bg-cream-50/95 flex flex-col items-center justify-center p-2 shadow-inner relative overflow-hidden">
           
-          <!-- NEW DISTINCT MASTERPIECE GANPATI BAPPA EMBLEM DESIGN -->
-          <svg class="w-40 h-40 sm:w-48 sm:h-48 filter drop-shadow-md" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- CLEAN, ELEGANT & MINIMALIST SACRED GANPATI BAPPA EMBLEM -->
+          <svg class="w-40 h-40 sm:w-44 sm:h-44 filter drop-shadow-md" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="bappaGoldShine" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFFDF7"/>
-                <stop offset="25%" stop-color="#F2DF9F"/>
-                <stop offset="55%" stop-color="#D4AF37"/>
-                <stop offset="85%" stop-color="#C29826"/>
-                <stop offset="100%" stop-color="#7A5B0F"/>
-              </linearGradient>
-              <linearGradient id="bappaDarkGold" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#8B6314"/>
-                <stop offset="50%" stop-color="#D4AF37"/>
+              <linearGradient id="pureGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#C59B27"/>
+                <stop offset="50%" stop-color="#8C6212"/>
                 <stop offset="100%" stop-color="#674706"/>
               </linearGradient>
-              <radialGradient id="auraRadial" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#FAF3DC" stop-opacity="0.8"/>
+              <radialGradient id="sacredHalo" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FAF3DC" stop-opacity="0.9"/>
                 <stop offset="100%" stop-color="#FAF3DC" stop-opacity="0"/>
               </radialGradient>
             </defs>
 
-            <!-- Background Radiant Ring -->
-            <circle cx="80" cy="80" r="74" fill="url(#auraRadial)"/>
-            <circle cx="80" cy="80" r="72" stroke="#D4AF37" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.75"/>
-            <circle cx="80" cy="80" r="67" stroke="#9E7717" stroke-width="0.8" opacity="0.6"/>
+            <!-- Subtle background aura -->
+            <circle cx="80" cy="80" r="72" fill="url(#sacredHalo)"/>
+            <circle cx="80" cy="80" r="70" stroke="#D4AF37" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.6"/>
 
-            <!-- Divine Royal Mukut (Artisan Tiered Pagdi & Kalash) -->
-            <path d="M80 14 L84 21 L88 25 L80 28 L72 25 L76 21 Z" fill="url(#bappaGoldShine)" stroke="#7A5B0F" stroke-width="1.1"/>
-            <circle cx="80" cy="11.5" r="2.5" fill="#8B2635"/>
-            <!-- Tier 1 Crown -->
-            <path d="M64 29 Q80 20 96 29 L93 39 Q80 32 67 39 Z" fill="url(#bappaGoldShine)" stroke="#7A5B0F" stroke-width="1.3"/>
-            <circle cx="80" cy="30" r="1.8" fill="#8B2635"/>
-            <circle cx="72" cy="33.5" r="1.3" fill="#D4AF37"/>
-            <circle cx="88" cy="33.5" r="1.3" fill="#D4AF37"/>
-            <!-- Tier 2 Crown Band -->
-            <path d="M60 41 Q80 34 100 41 L97 48 Q80 43 63 48 Z" fill="url(#bappaGoldShine)" stroke="#7A5B0F" stroke-width="1.3"/>
-            <circle cx="80" cy="42" r="1.6" fill="#8B2635"/>
+            <!-- Pure Sacred Kalash Crown Top -->
+            <path d="M80 18 L83 24 L77 24 Z" fill="#D4AF37" stroke="#7A5B0F" stroke-width="0.8"/>
+            <circle cx="80" cy="15" r="2.2" fill="#8B2635"/>
+            <path d="M72 25 Q80 21 88 25" stroke="url(#pureGoldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M68 31 Q80 26 92 31" stroke="url(#pureGoldGrad)" stroke-width="2.8" stroke-linecap="round"/>
 
-            <!-- Sacred Tilak & Trishul with Chandrabindu -->
-            <path d="M80 48 V63" stroke="#8B2635" stroke-width="2.8" stroke-linecap="round"/>
-            <path d="M72 53 Q80 62 88 53" stroke="url(#bappaDarkGold)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-            <circle cx="80" cy="66" r="2.2" fill="#8B2635"/>
+            <!-- Sacred Kumkum Tilak & Trishul Line -->
+            <path d="M80 37 V52" stroke="#8B2635" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="80" cy="56" r="2.2" fill="#8B2635"/>
 
-            <!-- Left Broad Ear with Ornate Inset & Royal Kundal -->
-            <path d="M62 48 C34 44 24 68 40 86 C50 93 60 88 62 77" fill="none" stroke="url(#bappaDarkGold)" stroke-width="3.2" stroke-linecap="round"/>
-            <path d="M54 56 C38 56 34 71 44 80" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.85"/>
-            <circle cx="38" cy="72" r="2.6" fill="#8B2635"/>
-            <circle cx="38" cy="72" r="1.2" fill="#FAF3DC"/>
+            <!-- Graceful Right Ear & Head Arc -->
+            <path d="M86 34 C104 36 120 48 116 66 C112 80 98 80 94 72" 
+                  fill="none" stroke="url(#pureGoldGrad)" stroke-width="3.6" stroke-linecap="round"/>
 
-            <!-- Right Majestic Ear with Ornate Inset & Royal Kundal -->
-            <path d="M98 48 C126 44 136 68 120 86 C110 93 100 88 98 77" fill="none" stroke="url(#bappaDarkGold)" stroke-width="3.2" stroke-linecap="round"/>
-            <path d="M106 56 C122 56 126 71 116 80" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.85"/>
-            <circle cx="122" cy="72" r="2.6" fill="#8B2635"/>
-            <circle cx="122" cy="72" r="1.2" fill="#FAF3DC"/>
+            <!-- Graceful Left Ear Arc -->
+            <path d="M74 34 C56 36 40 48 44 66 C48 80 62 80 66 72" 
+                  fill="none" stroke="url(#pureGoldGrad)" stroke-width="3.6" stroke-linecap="round"/>
 
-            <!-- Peaceful Meditative Eyes -->
-            <path d="M66 56 Q71 52 76 57" stroke="#674706" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-            <path d="M84 57 Q89 52 94 56" stroke="#674706" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-            <circle cx="71" cy="57" r="1.4" fill="#674706"/>
-            <circle cx="89" cy="57" r="1.4" fill="#674706"/>
+            <!-- Meditative Eyes & Brow Accents -->
+            <path d="M63 48 Q68 44 73 49" stroke="#7A5B0F" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M87 49 Q92 44 97 48" stroke="#7A5B0F" stroke-width="2" stroke-linecap="round" fill="none"/>
 
             <!-- Sacred Tusks (Ekdanta) -->
-            <!-- Broken Tusk (Sacred Ekdanta on Left) -->
-            <path d="M66 77 L57 80" stroke="#FFFDF7" stroke-width="3.6" stroke-linecap="round"/>
-            <!-- Full Long Tusk on Right -->
-            <path d="M94 77 L105 82" stroke="#FFFDF7" stroke-width="3.6" stroke-linecap="round"/>
+            <line x1="68" y1="68" x2="62" y2="70" stroke="#FAF3DC" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="68" y1="68" x2="62" y2="70" stroke="#7A5B0F" stroke-width="1.2" stroke-linecap="round"/>
+            
+            <line x1="92" y1="68" x2="99" y2="71" stroke="#FAF3DC" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="92" y1="68" x2="99" y2="71" stroke="#7A5B0F" stroke-width="1.2" stroke-linecap="round"/>
 
-            <!-- Graceful Vakratunda Sacred Trunk (Continuous Divine Flow to Right) -->
-            <path d="M80 65 C67 65 65 85 67 101 C68 116 82 128 98 126 C110 124 118 114 115 104 C112 95 102 96 101 103 C100 109 92 112 85 108 C76 103 74 91 76 82 C77 72 82 68 82 68" fill="none" stroke="url(#bappaDarkGold)" stroke-width="4.8" stroke-linecap="round"/>
+            <!-- Elegant Calligraphic Single-Stroke Vakratunda Trunk -->
+            <path d="M80 58 C74 70 72 84 74 98 C76 112 88 122 102 120 C114 118 122 107 116 97 C112 90 102 92 101 99 C100 105 92 109 86 103 C80 97 81 83 82 72" 
+                  fill="none" stroke="url(#pureGoldGrad)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
 
-            <!-- Golden Ornate Rings across the Sacred Trunk -->
-            <path d="M71 90 Q76 92 81 90" stroke="#FFFDF7" stroke-width="1.8" fill="none"/>
-            <path d="M72 100 Q78 103 84 100" stroke="#FFFDF7" stroke-width="1.8" fill="none"/>
-            <path d="M77 110 Q84 114 91 111" stroke="#FFFDF7" stroke-width="1.8" fill="none"/>
-
-            <!-- Sacred Golden Modak at Trunk Tip -->
-            <g transform="translate(112, 99)">
-              <ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="url(#bappaGoldShine)" stroke="#7A5B0F" stroke-width="1.2"/>
-              <path d="M0 -7.5 L0 -3.5" stroke="#8B2635" stroke-width="1.4" stroke-linecap="round"/>
-              <circle cx="-1.8" cy="-0.5" r="1.4" fill="#FAF3DC"/>
+            <!-- Auspicious Modak Held in Trunk -->
+            <g transform="translate(108, 93)">
+              <ellipse cx="0" cy="0" rx="5" ry="6" fill="#D4AF37" stroke="#7A5B0F" stroke-width="1"/>
+              <path d="M0 -6 L0 -2" stroke="#8B2635" stroke-width="1.2" stroke-linecap="round"/>
             </g>
 
-            <!-- Auspicious Lotus Pedestal (Padmasana) Base -->
-            <path d="M46 136 C64 126 96 126 114 136 C102 143 58 143 46 136 Z" fill="url(#bappaGoldShine)" stroke="#7A5B0F" stroke-width="1.4"/>
-            <path d="M60 133 Q80 125 100 133" stroke="#FAF3DC" stroke-width="1.4" fill="none"/>
-            <circle cx="80" cy="136" r="2.8" fill="#8B2635"/>
+            <!-- Auspicious Minimalist Lotus Base -->
+            <path d="M54 135 C68 128 92 128 106 135 C95 141 65 141 54 135 Z" fill="#D4AF37" opacity="0.85" stroke="#7A5B0F" stroke-width="1"/>
+            <circle cx="80" cy="133.5" r="2.2" fill="#8B2635"/>
           </svg>
 
         </div>
@@ -489,7 +468,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               
-              <!-- EVENT 1: HALDI -->
+              <!-- EVENT: HALDI -->
               <div class="bg-cream-100 rounded-2xl p-6 sm:p-8 border border-gold-300/80 luxury-box-shadow hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-yellow-200/20 rounded-bl-full pointer-events-none transition-all group-hover:scale-110"></div>
                 
@@ -498,24 +477,38 @@
                   <div class="w-12 h-12 rounded-xl bg-gold-200/60 border border-gold-400 flex items-center justify-center text-2xl shadow-inner">
                     🌼
                   </div>
-                  <span class="px-3 py-1 bg-gold-200 text-gold-700 rounded-full text-xs font-semibold tracking-wider font-cinzel">
-                    EVENT 01
-                  </span>
                 </div>
 
                 <h4 class="text-2xl font-cinzel font-bold text-gold-700 mb-1">HALDI</h4>
                 <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-4">Ceremony of Sunshine &amp; Blessings</p>
 
-                <div class="pt-4 border-t border-gold-200/80 flex items-center space-x-2 text-royal-dark">
-                  <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
-                    <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                  <span class="font-sans font-medium text-sm">Time: <strong class="text-gold-700">10:30 AM</strong></span>
+                <div class="pt-4 border-t border-gold-200/80 flex flex-wrap items-center justify-between gap-2 text-royal-dark">
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                      <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="font-sans font-medium text-sm">Time: <strong class="text-gold-700">10:30 AM</strong></span>
+                  </div>
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gold-200/70 text-gold-800 border border-gold-400/60">
+                    Followed by lunch 🍽️
+                  </span>
+                </div>
+
+                <!-- Haldi Venue -->
+                <div class="mt-4 pt-3 border-t border-gold-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div class="flex items-start space-x-2 text-xs text-royal-dark/90">
+                    <span class="text-gold-600 text-sm">📍</span>
+                    <span><strong>Venue:</strong> 18, 19, Shreeji Society, opp. Om Icon, Vesu, Surat</span>
+                  </div>
+                  <a href="https://www.google.com/maps/search/?api=1&query=18+19+Shreeji+society+opp+om+icone+Vesu+surat" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 text-xs font-semibold text-gold-700 hover:text-gold-800 bg-gold-200/60 hover:bg-gold-200 px-3 py-1.5 rounded-lg border border-gold-400 self-start sm:self-auto transition">
+                    <span>View on Map</span>
+                    <span>↗</span>
+                  </a>
                 </div>
               </div>
 
-              <!-- EVENT 2: SANGEET -->
+              <!-- EVENT: SANGEET -->
               <div class="bg-cream-100 rounded-2xl p-6 sm:p-8 border border-gold-300/80 luxury-box-shadow hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-gold-300/20 rounded-bl-full pointer-events-none transition-all group-hover:scale-110"></div>
                 
@@ -524,20 +517,34 @@
                   <div class="w-12 h-12 rounded-xl bg-gold-200/60 border border-gold-400 flex items-center justify-center text-2xl shadow-inner">
                     🪕
                   </div>
-                  <span class="px-3 py-1 bg-gold-200 text-gold-700 rounded-full text-xs font-semibold tracking-wider font-cinzel">
-                    EVENT 02
-                  </span>
                 </div>
 
                 <h4 class="text-2xl font-cinzel font-bold text-gold-700 mb-1">SANGEET</h4>
                 <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-4">An Evening of Music, Dance &amp; Joy</p>
 
-                <div class="pt-4 border-t border-gold-200/80 flex items-center space-x-2 text-royal-dark">
-                  <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
-                    <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                  <span class="font-sans font-medium text-sm">Time: <strong class="text-gold-700">7:00 PM onwards</strong></span>
+                <div class="pt-4 border-t border-gold-200/80 flex flex-wrap items-center justify-between gap-2 text-royal-dark">
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                      <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="font-sans font-medium text-sm">Time: <strong class="text-gold-700">7:00 PM onwards</strong></span>
+                  </div>
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gold-200/70 text-gold-800 border border-gold-400/60">
+                    Followed by dinner 🍽️
+                  </span>
+                </div>
+
+                <!-- Sangeet Venue -->
+                <div class="mt-4 pt-3 border-t border-gold-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div class="flex items-start space-x-2 text-xs text-royal-dark/90">
+                    <span class="text-gold-600 text-sm">📍</span>
+                    <span><strong>Venue:</strong> Avadh Utopia, Dumas Road, Surat</span>
+                  </div>
+                  <a href="https://share.google/1P7ryJi0qW0bTPbfQ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 text-xs font-semibold text-gold-700 hover:text-gold-800 bg-gold-200/60 hover:bg-gold-200 px-3 py-1.5 rounded-lg border border-gold-400 self-start sm:self-auto transition">
+                    <span>View on Map</span>
+                    <span>↗</span>
+                  </a>
                 </div>
               </div>
 
@@ -555,7 +562,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               
-              <!-- EVENT 3: MANDAP MUHRAT -->
+              <!-- EVENT: MANDAP MUHRAT -->
               <div class="bg-cream-100 rounded-2xl p-6 sm:p-8 border border-gold-300/80 luxury-box-shadow hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-gold-400/20 rounded-bl-full pointer-events-none transition-all group-hover:scale-110"></div>
                 
@@ -564,24 +571,38 @@
                   <div class="w-12 h-12 rounded-xl bg-gold-200/60 border border-gold-400 flex items-center justify-center text-2xl shadow-inner">
                     🪔
                   </div>
-                  <span class="px-3 py-1 bg-gold-200 text-gold-700 rounded-full text-xs font-semibold tracking-wider font-cinzel">
-                    EVENT 03
-                  </span>
                 </div>
 
                 <h4 class="text-2xl font-cinzel font-bold text-gold-700 mb-1">MANDAP MUHRAT</h4>
                 <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-4">Sacred Puja &amp; Vedic Invocations</p>
 
-                <div class="pt-4 border-t border-gold-200/80 flex items-center space-x-2 text-royal-dark">
-                  <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
-                    <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                  <span class="font-sans font-medium text-sm">Time: <strong class="text-gold-700">10:00 AM</strong></span>
+                <div class="pt-4 border-t border-gold-200/80 flex flex-wrap items-center justify-between gap-2 text-royal-dark">
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                      <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="font-sans font-medium text-sm">Time: <strong class="text-gold-700">10:00 AM</strong></span>
+                  </div>
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gold-200/70 text-gold-800 border border-gold-400/60">
+                    Followed by lunch 🍽️
+                  </span>
+                </div>
+
+                <!-- Mandap Muhrat Venue -->
+                <div class="mt-4 pt-3 border-t border-gold-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div class="flex items-start space-x-2 text-xs text-royal-dark/90">
+                    <span class="text-gold-600 text-sm">📍</span>
+                    <span><strong>Venue:</strong> Avadh Utopia, Dumas Road, Surat</span>
+                  </div>
+                  <a href="https://share.google/1P7ryJi0qW0bTPbfQ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 text-xs font-semibold text-gold-700 hover:text-gold-800 bg-gold-200/60 hover:bg-gold-200 px-3 py-1.5 rounded-lg border border-gold-400 self-start sm:self-auto transition">
+                    <span>View on Map</span>
+                    <span>↗</span>
+                  </a>
                 </div>
               </div>
 
-              <!-- EVENT 4: WEDDING CEREMONY -->
+              <!-- EVENT: WEDDING CEREMONY -->
               <div class="bg-gradient-to-br from-cream-100 via-gold-100/60 to-cream-200 rounded-2xl p-6 sm:p-8 border-2 border-gold-400 luxury-box-shadow hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
                 <div class="absolute top-0 right-0 w-28 h-28 bg-gold-400/25 rounded-bl-full pointer-events-none transition-all group-hover:scale-110"></div>
                 
@@ -590,20 +611,34 @@
                   <div class="w-12 h-12 rounded-xl bg-gold-300/80 border border-gold-500 flex items-center justify-center text-2xl shadow-inner">
                     🕊️
                   </div>
-                  <span class="px-3 py-1 bg-gold-500 text-cream-50 rounded-full text-xs font-semibold tracking-wider font-cinzel">
-                    MAIN CEREMONY
-                  </span>
                 </div>
 
                 <h4 class="text-2xl font-cinzel font-bold gold-gradient-text mb-1">WEDDING CEREMONY</h4>
                 <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-4">Hastamelap &amp; Saptapadi</p>
 
-                <div class="pt-4 border-t border-gold-300 flex items-center space-x-2 text-royal-dark">
-                  <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
-                    <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                  <span class="font-sans font-medium text-sm">Time: <strong class="text-gold-700">Timing to be confirmed</strong></span>
+                <div class="pt-4 border-t border-gold-300 flex flex-wrap items-center justify-between gap-2 text-royal-dark">
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                      <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="font-sans font-medium text-sm">Time: <strong class="text-gold-700">Timing to be confirmed</strong></span>
+                  </div>
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gold-300/70 text-gold-900 border border-gold-500/60">
+                    Followed by dinner 🍽️
+                  </span>
+                </div>
+
+                <!-- Wedding Venue -->
+                <div class="mt-4 pt-3 border-t border-gold-300/70 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div class="flex items-start space-x-2 text-xs text-royal-dark/90">
+                    <span class="text-gold-600 text-sm">📍</span>
+                    <span><strong>Venue:</strong> Avadh Utopia, Dumas Road, Surat</span>
+                  </div>
+                  <a href="https://share.google/1P7ryJi0qW0bTPbfQ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 text-xs font-semibold text-gold-700 hover:text-gold-800 bg-gold-200/60 hover:bg-gold-200 px-3 py-1.5 rounded-lg border border-gold-400 self-start sm:self-auto transition">
+                    <span>View on Map</span>
+                    <span>↗</span>
+                  </a>
                 </div>
               </div>
 
@@ -621,7 +656,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               
-              <!-- EVENT 5: RECEPTION -->
+              <!-- EVENT: RECEPTION -->
               <div class="bg-cream-100 rounded-2xl p-6 sm:p-8 border border-gold-300/80 luxury-box-shadow hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group md:col-span-2">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between">
                   <div class="flex items-start space-x-4 mb-4 sm:mb-0">
@@ -631,19 +666,35 @@
                     <div>
                       <div class="flex items-center space-x-3">
                         <h4 class="text-2xl sm:text-3xl font-cinzel font-bold text-gold-700">RECEPTION</h4>
-                        <span class="px-3 py-1 bg-gold-200 text-gold-700 rounded-full text-xs font-semibold tracking-wider font-cinzel">EVENT 05</span>
                       </div>
                       <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mt-1">Dinner &amp; Celebratory Blessings</p>
                     </div>
                   </div>
 
-                  <div class="pt-3 sm:pt-0 border-t sm:border-t-0 border-gold-200 flex items-center space-x-2 text-royal-dark sm:pl-6 sm:border-l sm:border-gold-300">
-                    <svg class="w-5 h-5 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10" stroke-width="2"/>
-                      <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    <span class="font-sans font-medium text-base">Time: <strong class="text-gold-700">7:00 PM onwards</strong></span>
+                  <div class="pt-3 sm:pt-0 border-t sm:border-t-0 border-gold-200 flex flex-wrap items-center gap-3 text-royal-dark sm:pl-6 sm:border-l sm:border-gold-300">
+                    <div class="flex items-center space-x-2">
+                      <svg class="w-5 h-5 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                        <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                      <span class="font-sans font-medium text-base">Time: <strong class="text-gold-700">7:00 PM onwards</strong></span>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gold-200/80 text-gold-800 border border-gold-400/60">
+                      Followed by dinner 🍽️
+                    </span>
                   </div>
+                </div>
+
+                <!-- Reception Venue -->
+                <div class="mt-5 pt-4 border-t border-gold-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div class="flex items-start space-x-2 text-xs sm:text-sm text-royal-dark/90">
+                    <span class="text-gold-600 text-base">📍</span>
+                    <span><strong>Venue:</strong> Oswal Center, Party Plot No. 1, Jamnagar</span>
+                  </div>
+                  <a href="https://www.google.com/maps/search/?api=1&query=Oswal+center+party+plot+no+1+Jamnagar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 text-xs font-semibold text-gold-700 hover:text-gold-800 bg-gold-200/60 hover:bg-gold-200 px-3 py-1.5 rounded-lg border border-gold-400 self-start sm:self-auto transition">
+                    <span>View on Map</span>
+                    <span>↗</span>
+                  </a>
                 </div>
               </div>
 
@@ -747,8 +798,8 @@
           <span class="h-px w-12 bg-gold-400"></span>
         </div>
         <h3 class="font-cinzel text-2xl font-bold gold-gradient-text">With Warmest Regards &amp; Gratitude</h3>
-        <p class="font-cormorant italic text-lg text-royal-dark/80">
-          Mehta &amp; Wankawala Families
+        <p class="font-cormorant italic text-xl text-royal-dark/90 font-medium">
+          Mehta Family
         </p>
         <p class="font-sans text-xs uppercase tracking-widest text-gold-600 pt-4">
           24th January 2027 • Celebrating Together
@@ -1061,7 +1112,7 @@
     const rsvpForm = document.getElementById('rsvpForm');
     const rsvpStatus = document.getElementById('rsvpStatus');
     const submitRsvpBtn = document.getElementById('submitRsvpBtn');
-    const TARGET_PHONE = '919408332781'; // Destination number +91 94083 32781
+    const TARGET_PHONE = '919408332781'; // Destination WhatsApp: +91 94083 32781
 
     rsvpForm.addEventListener('submit', function(e) {
       e.preventDefault();
